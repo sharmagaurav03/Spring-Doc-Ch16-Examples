@@ -1,0 +1,39 @@
+package com.serviceId.repository;
+
+// Generated 4 Jun, 2014 11:33:30 AM 
+
+import java.io.IOException;
+import java.lang.annotation.Annotation;
+import java.lang.reflect.Method;
+
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.JoinColumn;
+
+import org.hibernate.SessionFactory;
+import org.hibernate.metadata.ClassMetadata;
+import org.springframework.orm.hibernate4.HibernateTemplate;
+
+import com.fasterxml.jackson.core.JsonGenerationException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.serviceId.Person;
+import com.wavemaker.runtime.data.dao.WMGenericDaoImpl;
+
+/**
+ * Specifies methods used to obtain and modify Person related information which
+ * is stored in the database.
+ */
+public class PersonRepository extends WMGenericDaoImpl<Person, Long> {
+
+	private HibernateTemplate template;
+
+	public HibernateTemplate getTemplate() {
+		return template;
+	}
+
+	public void setTemplate(HibernateTemplate template) {
+		this.template = template;
+	}
+
+}
